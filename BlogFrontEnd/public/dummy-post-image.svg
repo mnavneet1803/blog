@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#f8f9fa"/>
+  <rect x="1" y="1" width="398" height="198" fill="none" stroke="#dee2e6" stroke-width="2" stroke-dasharray="10,5"/>
+  <g transform="translate(200,100)">
+    <rect x="-60" y="-25" width="120" height="50" fill="#e9ecef" rx="8"/>
+    <text x="0" y="5" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="14" font-weight="500">No Image Available</text>
+  </g>
+  <circle cx="150" cy="70" r="15" fill="#dee2e6"/>
+  <path d="M135 85 L165 85 L155 95 Z" fill="#dee2e6"/>
+  <circle cx="250" cy="70" r="15" fill="#dee2e6"/>
+  <path d="M235 85 L265 85 L255 95 Z" fill="#dee2e6"/>
+</svg>

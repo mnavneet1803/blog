@@ -1,0 +1,205 @@
+.image-manager {
+  margin: 15px 0;
+  padding: 20px;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  background: var(--card-background);
+}
+
+.image-manager-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.image-manager-header h4 {
+  color: var(--text-color);
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.image-manager-hint {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.image-manager-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.image-manager-item {
+  position: relative;
+  cursor: move;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-manager-item:hover {
+  transform: scale(1.05);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.image-manager-item.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg) scale(0.95);
+}
+
+.image-manager-preview {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.image-manager-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.image-manager-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.image-manager-item:hover .image-manager-overlay {
+  opacity: 1;
+}
+
+.image-remove-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  line-height: 1;
+}
+
+.image-remove-btn:hover {
+  background: #c82333;
+  transform: scale(1.1);
+}
+
+.image-order-number {
+  background: #007bff;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.add-image-section {
+  margin: 15px 0;
+}
+
+.add-image-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.add-image-btn:hover {
+  background: #0056b3;
+}
+
+.add-image-btn:disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.add-image-input {
+  display: none;
+}
+
+.image-preview-section {
+  margin: 20px 0;
+}
+
+.image-preview-section h4 {
+  color: var(--text-color);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .image-manager-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+  
+  .image-manager-preview {
+    height: 100px;
+  }
+  
+  .image-manager {
+    padding: 15px;
+  }
+  
+  .add-image-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-manager-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
+  
+  .image-manager-preview {
+    height: 80px;
+  }
+  
+  .image-remove-btn,
+  .image-order-number {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  
+  .image-remove-btn {
+    font-size: 14px;
+  }
+}

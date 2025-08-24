@@ -1,0 +1,224 @@
+.single-image-container {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.single-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow, rgba(0, 0, 0, 0.1));
+}
+
+.image-carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 15px auto;
+  background: var(--bg-secondary, #f8f9fa);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow, rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--border-color, #e9ecef);
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--card-bg, #fff);
+}
+
+.carousel-image-container {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease;
+  z-index: 2;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn:disabled {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.prev-btn {
+  border-radius: 0 5px 5px 0;
+}
+
+.next-btn {
+  border-radius: 5px 0 0 5px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--bg-secondary, #e9ecef);
+  border-top: 1px solid var(--border-color, #dee2e6);
+}
+
+.image-counter {
+  font-weight: 600;
+  color: var(--text-primary, #495057);
+  font-size: 14px;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border-color, #cbd3da);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-dot:hover {
+  background: var(--text-secondary, #6c757d);
+  transform: scale(1.1);
+}
+
+.carousel-dot.active {
+  background: var(--accent-color, #007bff);
+  transform: scale(1.2);
+}
+
+.carousel-thumbnails {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: var(--bg-secondary, #f8f9fa);
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border-color, #dee2e6);
+}
+
+.thumbnail {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+  overflow: hidden;
+  background: none;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.thumbnail:hover {
+  border-color: var(--text-secondary, #6c757d);
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border-color: var(--accent-color, #007bff);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .image-carousel {
+    margin: 10px;
+  }
+  
+  .carousel-image-container {
+    padding: 15px 10px;
+    min-height: 250px;
+  }
+  
+  .carousel-image {
+    max-height: 300px;
+  }
+  
+  .carousel-btn {
+    padding: 12px 15px;
+    font-size: 16px;
+    min-height: 50px;
+  }
+  
+  .carousel-indicators {
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .carousel-thumbnails {
+    padding: 10px;
+    gap: 8px;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-image-container {
+    padding: 10px 5px;
+    min-height: 200px;
+  }
+  
+  .carousel-image {
+    max-height: 250px;
+  }
+  
+  .carousel-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+    min-height: 45px;
+  }
+  
+  .carousel-thumbnails {
+    gap: 6px;
+  }
+  
+  .thumbnail {
+    width: 45px;
+    height: 45px;
+  }
+}
